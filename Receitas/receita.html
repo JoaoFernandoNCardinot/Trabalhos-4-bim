@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Receta</title>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" type="text/css" href="./css/receitas.css"/>
+	<script type="text/javascript" src="./js/jquery.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+	<script type="text/javascript">
+		$(function(){
+			var servico= "http://botanicapp.com.br/receitas_teste.php";
+
+			var $xhr = $.get(servico);
+
+			$xhr.done(function(data){
+				var receitaArray= JSON.parse(data);
+				console.log(receitaArray);
+
+				$.each(receitaArray, function(ind, obj){
+					var $ul= $("<ul/>").addClass("ingredientes");
+					var $pre = $("<ul/>");
+					$.each(obj.ingredientes,function(i, objeto){
+						$ul.append($("<li />").text(objeto));
+					});
+					$.each(obj.preparo,function(i, objeto){
+						$pre.append($("<li />").text(objeto));
+					});
+					$(".receitas")
+						.append($("<div/>")
+							.addClass("receita")
+							.append($("<h1/>").text(obj.nome))
+							.append($("<img/>")
+								.attr("src",obj.foto))
+							.append($("<p/>").text(obj.descricao))							
+							.append($("<h3/>").text("Ingredientes"))
+							.append($ul)
+							.append($("<h3/>").text("Modo de preparo"))
+							.append($pre)
+						)
+				});
+					
+			});	
+		});
+	</script>
+</head>
+<body>
+		<div class="receitas"></div>
+</body>
+</html>

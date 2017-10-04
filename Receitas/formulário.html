@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Form</title>
+	<script type="text/javascript" src="./js/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+
+			
+			$("#cep").blur(function(){
+					var servico = "http://api.postmon.com.br/v1/cep/";
+					var cep = $("#cep").val();
+					var $xhr= $.get(servico + cep);
+				$xhr.done(function(data){
+						$("#logradouro").val(data.logradouro);
+						$("#numero").val(data.complemento);
+						$("#bairro").val(data.bairro);
+						$("#cidade").val(data.cidade);
+						$("#estado").val(data.estado);
+				});	
+			});
+		});
+	</script>
+</head>
+<body>	
+		
+		<fieldset>
+			<label> CEP </label><input type="text" id="cep"/></br>
+			<label> Logradouro </label><input type="text" id="logradouro"/></br>
+			<label> Numero </label><input type="text" id="numero"/></br>
+			<label> Bairro </label><input type="text" id="bairro"/></br>
+			<label> Cidade </label><input type="text" id="cidade"/></br>
+			<label> Estado </label><input type="text" id="estado"/></br>
+		</fieldset>
+		<input type="submit" id="sub" value="salvar" />
+</body>
+</html>

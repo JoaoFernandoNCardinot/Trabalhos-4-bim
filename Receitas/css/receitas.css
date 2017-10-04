@@ -1,0 +1,49 @@
+.receitas img{
+	clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+}
+
+.receitas h1{
+	font-family: 'Dancing Script', cursive;
+	font-size: 3em;
+}
+
+.receitas h3{
+	font-family: 'Poiret One', cursive;
+	font-size: 2em;
+}
+
+body{
+	font-family: sans-serif;
+	color: #FFF;
+	margin: 0 auto;
+	height: 100vh;
+	width: 100%;
+	text-align: center;
+	background: url(https://cdn.pixabay.com/photo/2016/03/15/02/42/floor-1256804_960_720.jpg) no-repeat fixed;
+	background-size: 100%;
+}
+.receitas ul{
+	text-align: center;
+	list-style: none;
+	padding: 0;
+}
+.receita{
+	width: 80%;
+	margin: 0 auto;
+	margin-bottom: 20px;
+	border: 1.5px solid #666;
+}
+.receita:hover{
+	background-color: rgba(0,0,0,0.8);
+}
+.receitas{
+	margin: 0;
+	width: 100%;
+	background-color: rgba(0,0,0, 0.5);
+}
+.ingredientes{
+	border: 5px dotted #FFF;
+	width: 200px;
+	margin: 0 auto;
+	padding: 5px;
+}
