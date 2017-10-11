@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css?family=Fascinate+Inline');
+body{
+	margin: 0 auto;
+	font-family: 'Fascinate Inline', cursive;
+}
+#danger{
+	background-color: red;
+}
+#warning{
+	background-color: yellow;
+}
+#normal{
+	background-color: blue;
+}
+#strong{
+	background-color: green;
+}
+
+.tipo{
+	display: inline;
+
+}
+
+.senha {
+width: 250px;
+float: left;
+}
+.plugin{
+	display: flex;
+	align-items: center;
+	flex: center;
+	justify-content: center;
+	margin: 0 auto;
+}
